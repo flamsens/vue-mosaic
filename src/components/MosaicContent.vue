@@ -1,7 +1,7 @@
 <template>
   <template v-if="isParent(node)">
     <MosaicContent :node="node.first" :bounding-box="boundingBoxes!.first" :path="path.concat('first')">
-      <template #content="contentProps">
+      <template #content="contentProps: any">
         <slot name="content" v-bind="contentProps"></slot>
       </template>
     </MosaicContent>
@@ -17,7 +17,7 @@
     />
 
     <MosaicContent :node="node.second" :bounding-box="boundingBoxes!.second" :path="path.concat('second')">
-      <template #content="contentProps">
+      <template #content="contentProps: any">
         <slot name="content" v-bind="contentProps"></slot>
       </template>
     </MosaicContent>
