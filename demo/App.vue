@@ -10,7 +10,6 @@
 
         <Mosaic v-model:root="root" inactive-target="#mosaic-inactive-items" @release="handleSaveChange" @add-item="handleAddItem">
           <MosaicPanel v-for="item in items" :key="item.key" :window-title="item.title">
-            {{ item.key }}
             <Hello />
           </MosaicPanel>
         </Mosaic>
@@ -21,13 +20,13 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import Mosaic from "./components/Mosaic.vue";
-import MosaicContext from "./components/MosaicContext.vue";
-import MosaicDraggable from "./components/MosaicDraggable.vue";
-import MosaicDropzone from "./components/MosaicDropzone.vue";
-import MosaicPanel from "./components/MosaicPanel.vue";
+import Mosaic from "../src/components/Mosaic.vue";
+import MosaicContext from "../src/components/MosaicContext.vue";
+import MosaicDraggable from "../src/components/MosaicDraggable.vue";
+import MosaicDropzone from "../src/components/MosaicDropzone.vue";
+import MosaicPanel from "../src/components/MosaicPanel.vue";
 import Hello from "./components/previews/Hello.vue";
-import { MosaicItem, MosaicNode } from "./types/Mosaic";
+import { MosaicItem, MosaicNode } from "../src/types/Mosaic";
 
 const items = ref<
   {
